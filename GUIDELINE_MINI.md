@@ -25,5 +25,16 @@
 | --- | --- | --- | --- |
 | `drive_014` | Xe cứu hộ của công an (cabin trắng, phía sau có cần cẩu kéo xe) ở giữa ảnh | `truck` | Cabin tách rời phần thiết bị phía sau, là xe tải chuyên dụng chứ không phải xe chở khách; không thuộc `van` vì không có thân hộp liền |
 | `drive_014` | Xe đỏ thân hộp, mui cao, cỡ lớn hơn van thường ở góc trên bên phải | Tạm gán `van`, đã ghi lại để hỏi giảng viên | Ca van/minibus mơ hồ; GUIDE yêu cầu không tự chọn mà ghi case và hỏi; thân ngắn, ca-pô ngắn nên tạm nghiêng về `van` |
-| `drive_024` | Xe ba bánh chở khách có mui (phía dưới giữa ảnh) và nhiều minivan trắng/bạc cỡ nhỏ | Xe ba bánh: không gán; minivan: `van` | Xe ba bánh không thuộc bốn lớp của schema; minivan thân hộp, mui cao thuộc `van` theo định nghĩa "minivan chở hàng hoặc chở người" |
 | `drive_042` | Xe chở hàng chất bao tải cao hơn cabin; xe buýt đỏ bị cắt ở rìa dưới bên trái | Xe chở hàng: `truck`; xe buýt bị cắt: `bus`, box chạm rìa ảnh | Hàng hóa chất cao vẫn là `truck` vì có cabin và thùng chở hàng; xe bị cắt khung vẫn gán theo phần nhìn thấy |
+
+## Cập nhật sau gold QC (rework)
+
+- Không gán xe đỗ dọc lề đường/vỉa hè và dòng xe nhỏ ở xa cuối đường (vùng không nhận rõ từng xe); chỉ gán xe đang lưu thông ở cự ly gần và trung bình. Quy tắc này rút ra từ quy ước của gold eval trong repo, khác với câu "xe đang đỗ vẫn là car" trong README — đã báo coach.
+- Minivan/MPV thân cao, ca-pô ngắn, đuôi vuông gán `van`, không gán `car`.
+- Thứ tự class ID trong gold (train và `labels/eval`) là car=0, van=1, truck=2, bus=3, khác `data.yaml` (car=0, truck=1, bus=2, van=3). Nhãn train sau rework dùng thứ tự của gold để khớp với tập eval khi train; đã báo coach.
+
+## Cập nhật sau gold QC (rework)
+
+- Không gán xe đỗ dọc lề đường/vỉa hè và dòng xe nhỏ ở xa cuối đường (vùng không nhận rõ từng xe); chỉ gán xe đang lưu thông ở cự ly gần và trung bình. Quy tắc này rút ra từ quy ước của gold eval trong repo, khác với câu "xe đang đỗ vẫn là car" trong README — đã báo coach.
+- Minivan/MPV thân cao, ca-pô ngắn, đuôi vuông gán `van`, không gán `car`.
+- Thứ tự class ID trong gold (train và `labels/eval`) là car=0, van=1, truck=2, bus=3, khác `data.yaml` (car=0, truck=1, bus=2, van=3). Nhãn train sau rework dùng thứ tự của gold để khớp với tập eval khi train; đã báo coach.
