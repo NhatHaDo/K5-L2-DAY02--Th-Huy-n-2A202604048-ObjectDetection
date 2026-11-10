@@ -32,9 +32,3 @@
 - Không gán xe đỗ dọc lề đường/vỉa hè và dòng xe nhỏ ở xa cuối đường (vùng không nhận rõ từng xe); chỉ gán xe đang lưu thông ở cự ly gần và trung bình. Quy tắc này rút ra từ quy ước của gold eval trong repo, khác với câu "xe đang đỗ vẫn là car" trong README — đã báo coach.
 - Minivan/MPV thân cao, ca-pô ngắn, đuôi vuông gán `van`, không gán `car`.
 - Thứ tự class ID trong gold (train và `labels/eval`) là car=0, van=1, truck=2, bus=3, khác `data.yaml` (car=0, truck=1, bus=2, van=3). Nhãn train sau rework dùng thứ tự của gold để khớp với tập eval khi train; đã báo coach.
-
-## Cập nhật sau gold QC (rework)
-
-- Không gán xe đỗ dọc lề đường/vỉa hè và dòng xe nhỏ ở xa cuối đường (vùng không nhận rõ từng xe); chỉ gán xe đang lưu thông ở cự ly gần và trung bình. Quy tắc này rút ra từ quy ước của gold eval trong repo, khác với câu "xe đang đỗ vẫn là car" trong README — đã báo coach.
-- Minivan/MPV thân cao, ca-pô ngắn, đuôi vuông gán `van`, không gán `car`.
-- Thứ tự class ID trong gold (train và `labels/eval`) là car=0, van=1, truck=2, bus=3, khác `data.yaml` (car=0, truck=1, bus=2, van=3). Nhãn train sau rework dùng thứ tự của gold để khớp với tập eval khi train; đã báo coach.
